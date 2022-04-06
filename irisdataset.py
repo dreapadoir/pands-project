@@ -50,7 +50,10 @@ def mean_confidence_interval(data, confidence=0.95):      #uses scipy and numpy 
     h = se * scipy.stats.t.ppf((1 + confidence) / 2., n-1)
     return print('The 95% confidence interval is ({}, {})'.format(round(m-h, 3), round(m+h, 3)))
 
-intervals = [range(0, 50), range(50, 100), range(100,150)]
+intervals = [range(0, 50), range(50, 100), range(100,150)]          #creates slices equivalent to the locations of the three varieties of iris
 
-for interval in intervals:
+for interval in intervals:                     #calls the function in a for loop to print out the 95% confidence intervals of all 3 varieties
+        print(data.target_names[(min(interval))//50])
         mean_confidence_interval(irisData['petal length (cm)'][interval])
+        
+
