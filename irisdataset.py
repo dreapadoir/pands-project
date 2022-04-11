@@ -7,11 +7,13 @@ import pandas as pd
 import numpy as np
 import scipy.stats
 
-data = load_iris(return_X_y = True, as_frame = True)                 #loads the iris dataset as a dataframe
+data = load_iris(return_X_y = False, as_frame = True)                 #loads the iris dataset as a dataframe
 
 irisData = data.frame                           #creates a variable containing the dataframe
 
 print("Target codes:\n0 =", data.target_names[0], "\n1 =", data.target_names[1], "\n2 =", data.target_names[2]) #prints out the variety names equivalent to the target codes 
+
+print(irisData.head())                          #shows the first 5 lines of the dataframe to illustrate the structure
 
 print(irisData.groupby('target').agg(           #groups the data by variety (target) and aggregates the summary statistics listed
     {
