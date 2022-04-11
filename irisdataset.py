@@ -26,13 +26,46 @@ print(irisData.groupby('target').agg(           #groups the data by variety (tar
 )
 )
 
+
 labels = data.target_names                  #creates a list of the variety names
-sepLenBx = [                                #creates a list containing the sepal lengths of each variety
+sepLen = [                                #creates a list containing the sepal lengths of each variety
     irisData.iloc[:50]['sepal length (cm)'],irisData.iloc[50:100]['sepal length (cm)'],
     irisData.iloc[100:150]['sepal length (cm)']
 ]
 
-plt.boxplot(sepLenBx, labels = labels)      #plots boxplots of each set of data in sepLenBx and assigns the variety names as labels
+sepWid = [                                #creates a list containing the sepal widths of each variety
+    irisData.iloc[:50]['sepal width (cm)'],irisData.iloc[50:100]['sepal width (cm)'],
+    irisData.iloc[100:150]['sepal width (cm)']
+]
+
+petLen = [                                #creates a list containing the petal lengths of each variety
+    irisData.iloc[:50]['petal length (cm)'],irisData.iloc[50:100]['petal length (cm)'],
+    irisData.iloc[100:150]['petal length (cm)']
+]
+
+petWid = [                                #creates a list containing the petal widths of each variety
+    irisData.iloc[:50]['petal width (cm)'],irisData.iloc[50:100]['petal width (cm)'],
+    irisData.iloc[100:150]['petal width (cm)']
+]
+
+plt.boxplot(sepLen, labels = labels)      
+plt.ylabel("sepal length in cm")
+plt.title("Sepal Length")
+plt.show()
+
+plt.boxplot(sepWid, labels = labels)      
+plt.ylabel("sepal width in cm")
+plt.title("Sepal Width")
+plt.show()
+
+plt.boxplot(petLen, labels = labels)      
+plt.ylabel("petal length in cm")
+plt.title("petal Length")
+plt.show()
+
+plt.boxplot(petWid, labels = labels)      
+plt.ylabel("petal width in cm")
+plt.title("Petal Width")
 plt.show()
 
 print(irisData.groupby('target').agg(   #finds the standard deviation of the four attributes for each variety of iris
