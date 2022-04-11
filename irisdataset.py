@@ -7,7 +7,7 @@ import pandas as pd
 import numpy as np
 import scipy.stats
 
-data = load_iris(as_frame=True)                 #loads the iris dataset as a dataframe
+data = load_iris(return_X_y = True, as_frame = True)                 #loads the iris dataset as a dataframe
 
 irisData = data.frame                           #creates a variable containing the dataframe
 
