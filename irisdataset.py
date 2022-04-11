@@ -15,6 +15,10 @@ print("Target codes:\n0 =", data.target_names[0], "\n1 =", data.target_names[1],
 
 print(irisData.head())                          #shows the first 5 lines of the dataframe to illustrate the structure
 
+print("There are {} samples in the dataset".format(irisData['target'].count()))     #counts the samples in the dataset by counting each entry in the target column
+
+print(irisData.describe())                      #describes the dataset as a whole. It gives summary statistics for each attribute without considering the separate varieties.
+
 print(irisData.groupby('target').agg(           #groups the data by variety (target) and aggregates the summary statistics listed
     {
         'sepal length (cm)': ["min", "max", "mean" ],
