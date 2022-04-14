@@ -82,24 +82,12 @@ print(irisData.groupby('target').agg(   #finds the standard deviation of the fou
 )
 )
 
-def mean_confidence_interval(data, confidence=0.95):      #uses scipy and numpy to create a 95% confidence interval
-    a = 1.0 * data
-    n = len(a)
-    m, se = np.mean(a), scipy.stats.sem(a)
-    h = se * scipy.stats.t.ppf((1 + confidence) / 2., n-1)
-    print('The 95% confidence interval is ({}, {})'.format(round(m-h, 3), round(m+h, 3)))
-    return [round(m-h, 3), round(m+h, 3)]
 
 intervals = [range(0, 50), range(50, 100), range(100,150)]          #creates slices equivalent to the locations of the three varieties of iris
-
-for interval in intervals:                     #calls the function in a for loop to print out the 95% confidence intervals of all 3 varieties
-    print("Petal length confidence intervals:")
-    print(data.target_names[(min(interval))//50])
-    mean_confidence_interval(irisData['petal length (cm)'][interval])
         
 sepallength = input("Enter sepal length: ")     #accepts iris attribute data from user and stores in a variable
 sepalwidth = input("Enter sepal width: ")
 petallength = input("Enter petal length: ")
 petalwidth = input("Enter petal width: ")
 
-#if petallength > 
+print(round(irisData['sepal length (cm)'][0:50].mean(), 3))
