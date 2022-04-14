@@ -85,9 +85,13 @@ print(irisData.groupby('target').agg(   #finds the standard deviation of the fou
 
 intervals = [range(0, 50), range(50, 100), range(100,150)]          #creates slices equivalent to the locations of the three varieties of iris
         
-sepallength = input("Enter sepal length: ")     #accepts iris attribute data from user and stores in a variable
-sepalwidth = input("Enter sepal width: ")
-petallength = input("Enter petal length: ")
-petalwidth = input("Enter petal width: ")
+sepallength = float(input("Enter sepal length: "))     #accepts iris attribute data from user and stores in a variable
+sepalwidth = float(input("Enter sepal width: "))
+petallength = float(input("Enter petal length: "))
+petalwidth = float(input("Enter petal width: "))
 
-print(round(irisData['sepal length (cm)'][0:50].mean(), 3))
+if petallength >= (irisData['petal length (cm)'][0:50].mean() - (6 * (irisData['petal length (cm)'][0:50].std()))) and \
+petallength <= (irisData['petal length (cm)'][0:50].mean() + (6 * (irisData['petal length (cm)'][0:50].std()))) and \
+petalwidth >= (irisData['petal width (cm)'][0:50].mean() - (6 * (irisData['petal width (cm)'][0:50].std()))) and \
+petalwidth <= (irisData['petal width (cm)'][0:50].mean() + (6 * (irisData['petal width (cm)'][0:50].std()))):
+    print("setosa")
