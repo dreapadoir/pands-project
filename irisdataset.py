@@ -97,4 +97,7 @@ for interval in intervals:                     #calls the function in a for loop
     mean_confidence_interval(irisData['petal length (cm)'][interval])
         
 sepallength = input("Enter sepal length: ")
+sepalwidth = input("Enter sepal width: ")
+petallength = input("Enter petal length: ")
+petalwidth = input("Enter petal width: ")
 
