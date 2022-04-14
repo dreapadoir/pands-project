@@ -7,6 +7,8 @@ Initially, I intend to use pandas functions to generate summary statistics that 
 
 I will use a Jupyter notebook called project.ipynb to present the project and keep a separate file with all the code call irisdataset.py. When referring to line numbers, it is irisdataset.py that is being referred to.
 
+### References
+
 ## Initial Coding
 The first code I've written imports the dataset from the scikit-learn module. From research on scikit-learn.org, I found a method to import the iris dataset as a pandas dataframe. Line 4 imports the dataset in a dictionary like object, with several attributes. If the parameter asframe is set to True, the dataset is import as a dataframe.
 

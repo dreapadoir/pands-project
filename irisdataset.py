@@ -92,7 +92,9 @@ def mean_confidence_interval(data, confidence=0.95):      #uses scipy and numpy 
 intervals = [range(0, 50), range(50, 100), range(100,150)]          #creates slices equivalent to the locations of the three varieties of iris
 
 for interval in intervals:                     #calls the function in a for loop to print out the 95% confidence intervals of all 3 varieties
-        print(data.target_names[(min(interval))//50])
-        mean_confidence_interval(irisData['petal length (cm)'][interval])
+    print("Petal length confidence intervals:")
+    print(data.target_names[(min(interval))//50])
+    mean_confidence_interval(irisData['petal length (cm)'][interval])
         
+sepallength = input("Enter sepal length: ")
 
