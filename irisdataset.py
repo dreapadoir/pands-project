@@ -54,7 +54,7 @@ petWid = [                                #creates a list containing the petal w
     irisData.iloc[100:150]['petal width (cm)']
 ]
 
-plt.boxplot(sepLen, labels = labels)      
+plt.boxplot(sepLen, labels = labels)      #creates a boxplot for each characteristic grouped by variety
 plt.ylabel("sepal length in cm")
 plt.title("Sepal Length")
 plt.savefig("Sepal Length boxplot.png")
@@ -81,7 +81,7 @@ plt.title("Petal Width")
 plt.savefig("Petal Width boxplot.png")
 plt.show()
 
-plt.scatter(petLen, petWid, c = data.target)
+plt.scatter(petLen, petWid, c = data.target)            #creates a scatterplot for each pair of characteristics, colouring them by variety to differentiate each point
 plt.title("Plot of petal length vs petal width")
 plt.show()
 
