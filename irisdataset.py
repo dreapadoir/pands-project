@@ -12,7 +12,7 @@ data = load_iris(return_X_y = False, as_frame = True)                 #loads the
 
 irisData = data.frame                           #creates a variable containing the dataframe
 
-print("Target codes:\n0 =", data.target_names[0], "\n1 =", data.target_names[1], "\n2 =", data.target_names[2], file=open("summary.txt", "a")) #prints out the variety names equivalent to the target codes 
+print("Target codes:\n0 =", data.target_names[0], "\n1 =", data.target_names[1], "\n2 =", data.target_names[2], file=open("summary.txt", "w")) #prints out the variety names equivalent to the target codes 
 
 print(irisData.head())                          #shows the first 5 lines of the dataframe to illustrate the structure
 
