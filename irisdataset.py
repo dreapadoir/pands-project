@@ -20,14 +20,14 @@ print("There are {} samples in the dataset".format(irisData['target'].count())) 
 
 print(irisData.describe())                      #describes the dataset as a whole. It gives summary statistics for each attribute without considering the separate varieties.
 
-sys.stdout = open("summary.txt", "w")
+sys.stdout = open("summary.txt", "w")           #outputs the summary statistic data below to a file called summary.txt
 
 print(irisData.groupby('target').agg(           #groups the data by variety (target) and aggregates the summary statistics listed
     {
-        'sepal length (cm)': ["min", "max", "mean" ],
-        'sepal width (cm)': ["min", "max", "mean"],
-        'petal length (cm)': ["min", "max", "mean"],
-        'petal width (cm)': ["min", "max", "mean"]
+        'sepal length (cm)': ["min", "max", "mean", "median", "std" ],
+        'sepal width (cm)': ["min", "max", "mean", "median", "std"],
+        'petal length (cm)': ["min", "max", "mean", "median", "std"],
+        'petal width (cm)': ["min", "max", "mean", "median", "std"]
     }
 
 )
@@ -58,26 +58,30 @@ petWid = [                                #creates a list containing the petal w
 plt.boxplot(sepLen, labels = labels)      
 plt.ylabel("sepal length in cm")
 plt.title("Sepal Length")
-plt.show()
 plt.savefig("Sepal Length boxplot.png")
+plt.show()
+
 
 plt.boxplot(sepWid, labels = labels)      
 plt.ylabel("sepal width in cm")
 plt.title("Sepal Width")
-plt.show()
 plt.savefig("Sepal Width boxplot.png")
+plt.show()
+
 
 plt.boxplot(petLen, labels = labels)      
 plt.ylabel("petal length in cm")
 plt.title("petal Length")
-plt.show()
 plt.savefig("Petal Length boxplot.png")
+plt.show()
+
 
 plt.boxplot(petWid, labels = labels)      
 plt.ylabel("petal width in cm")
 plt.title("Petal Width")
-plt.show()
 plt.savefig("Petal Width boxplot.png")
+plt.show()
+
 
 print(irisData.groupby('target').agg(   #finds the standard deviation of the four attributes for each variety of iris
     {
