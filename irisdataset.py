@@ -6,6 +6,7 @@ from matplotlib import pyplot as plt
 import pandas as pd
 import numpy as np
 import scipy.stats
+import sys
 
 data = load_iris(return_X_y = False, as_frame = True)                 #loads the iris dataset as a dataframe
 
@@ -19,6 +20,8 @@ print("There are {} samples in the dataset".format(irisData['target'].count())) 
 
 print(irisData.describe())                      #describes the dataset as a whole. It gives summary statistics for each attribute without considering the separate varieties.
 
+sys.stdout = open("summary.txt", "w")
+
 print(irisData.groupby('target').agg(           #groups the data by variety (target) and aggregates the summary statistics listed
     {
         'sepal length (cm)': ["min", "max", "mean" ],
@@ -29,7 +32,7 @@ print(irisData.groupby('target').agg(           #groups the data by variety (tar
 
 )
 )
-
+sys.stdout.close()
 
 labels = data.target_names                  #creates a list of the variety names
 sepLen = [                                #creates a list containing the sepal lengths of each variety
