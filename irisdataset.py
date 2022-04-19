@@ -81,6 +81,29 @@ plt.title("Petal Width")
 plt.savefig("Petal Width boxplot.png")
 plt.show()
 
+plt.scatter(petLen, petWid, c = data.target)
+plt.title("Plot of petal length vs petal width")
+plt.show()
+
+plt.scatter(sepLen, sepWid, c = data.target)
+plt.title("Plot of sepal length vs sepal width")
+plt.show()
+
+plt.scatter(petLen, sepWid, c = data.target)
+plt.title("Plot of petal length vs sepal width")
+plt.show()
+
+plt.scatter(sepLen, petWid, c = data.target)
+plt.title("Plot of petal length vs petal width")
+plt.show()
+
+plt.scatter(petLen, sepLen, c = data.target)
+plt.title("Plot of petal length vs petal width")
+plt.show()
+
+plt.scatter(sepWid, petWid, c = data.target)
+plt.title("Plot of petal length vs petal width")
+plt.show()
 
 print(irisData.groupby('target').agg(   #finds the standard deviation of the four attributes for each variety of iris
     {
