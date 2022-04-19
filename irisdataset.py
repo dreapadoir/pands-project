@@ -20,7 +20,6 @@ print("There are {} samples in the dataset".format(irisData['target'].count())) 
 
 print(irisData.describe())                      #describes the dataset as a whole. It gives summary statistics for each attribute without considering the separate varieties.
 
-sys.stdout = open("summary.txt", "w")           #outputs the summary statistic data below to a file called summary.txt
 
 print(irisData.groupby('target').agg(           #groups the data by variety (target) and aggregates the summary statistics listed
     {
@@ -31,8 +30,8 @@ print(irisData.groupby('target').agg(           #groups the data by variety (tar
     }
 
 )
-)
-sys.stdout.close()
+, file=open("summary.txt", "a"))           #outputs the summary statistic data from this print statement to a file called summary.txt
+
 
 labels = data.target_names                  #creates a list of the variety names
 sepLen = [                                #creates a list containing the sepal lengths of each variety
