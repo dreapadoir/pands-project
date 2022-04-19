@@ -56,21 +56,25 @@ plt.boxplot(sepLen, labels = labels)
 plt.ylabel("sepal length in cm")
 plt.title("Sepal Length")
 plt.show()
+plt.savefig("Sepal Length boxplot.png")
 
 plt.boxplot(sepWid, labels = labels)      
 plt.ylabel("sepal width in cm")
 plt.title("Sepal Width")
 plt.show()
+plt.savefig("Sepal Width boxplot.png")
 
 plt.boxplot(petLen, labels = labels)      
 plt.ylabel("petal length in cm")
 plt.title("petal Length")
 plt.show()
+plt.savefig("Petal Length boxplot.png")
 
 plt.boxplot(petWid, labels = labels)      
 plt.ylabel("petal width in cm")
 plt.title("Petal Width")
 plt.show()
+plt.savefig("Petal Width boxplot.png")
 
 print(irisData.groupby('target').agg(   #finds the standard deviation of the four attributes for each variety of iris
     {
