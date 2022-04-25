@@ -14,6 +14,7 @@ irisData = data.frame                           #creates a variable containing t
 
 print("Target codes:\n0 =", data.target_names[0], "\n1 =", data.target_names[1], "\n2 =", data.target_names[2], file=open("summary.txt", "w")) #prints out the variety names equivalent to the target codes 
 
+print("Structure of the dataframe:")
 print("\n",irisData.head())                          #shows the first 5 lines of the dataframe to illustrate the structure
 
 print("\nThere are {} samples in the dataset".format(irisData['target'].count()))     #counts the samples in the dataset by counting each entry in the target column

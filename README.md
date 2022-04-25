@@ -8,6 +8,7 @@ Initially, I intend to use pandas functions to generate summary statistics that 
 ### References
 
 ## The dataset
+The actual data was collected by a botanist named Edgar Anderson in 1930. Three different but related species of iris were studied, iris setosa, iris virginica and iris versicolor. Anderson measured four attributes of each species; the width and length of the petals and the width and length of the sepal (the green outer layer of buds that remains below the petals on the stem after flowering). Anderson's data was used by the statistican R. A Fisher to test classification models. A more recent use case has been the application to machine learning. 
 
 ### References
 (https://en.wikipedia.org/wiki/Iris_flower_data_set)
