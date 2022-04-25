@@ -113,6 +113,7 @@ plt.title("Plot of sepal width vs petal width")
 plt.savefig("Plot of sepal width vs petal width.png")
 plt.show()
 
+print("\nStandard deviations of each attribute (to be used to construct six sigma intervals):")
 print("\n",irisData.groupby('target').agg(   #finds the standard deviation of the four attributes for each variety of iris
     {
         'sepal length (cm)': ["std"],
@@ -176,8 +177,8 @@ else:                                           #if the setosa petal dimensions 
         versicolorscore.append(1)
 
     if sum(versicolorscore) > sum(virginicascore):      #this block checks the sum of the score lists to see which is bigger and therefore more likely to be the variety of the user's sample
-        print("\nThis sample is iris versicolor")
+        print("\nThis sample is iris versicolor\n")
     elif sum(versicolorscore) < sum(virginicascore):
-        print("\nThis sample is iris virginica")
+        print("\nThis sample is iris virginica\n")
     elif sum(versicolorscore) == sum(virginicascore):
-        print("This sample is either iris versicolor or iris virginica but it cannot be differentiated any further using this model")
+        print("This sample is either iris versicolor or iris virginica but it cannot be differentiated any further using this model\n")
