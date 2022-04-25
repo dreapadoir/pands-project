@@ -124,9 +124,6 @@ print("\n",irisData.groupby('target').agg(   #finds the standard deviation of th
 )
 )
 
-
-intervals = [range(0, 50), range(50, 100), range(100,150)]          #creates slices equivalent to the locations of the three varieties of iris
-
 virginicascore = []
 versicolorscore = []
 
