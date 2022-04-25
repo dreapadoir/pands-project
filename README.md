@@ -18,6 +18,7 @@ My research on the iris dataset showed its main use is in machine learning. It i
 Initially, I intend to use pandas functions to generate summary statistics that describe the dataset. Then I will use pyplot to visualise those statistics. When the visualisations are complete that will give me an indication of what attributes will help to classify a particular instance. I then will define a function that takes in dimensions from the user for the four attributes, and insofar as possible, classify the user's data as a particular variety.
 
 ### References
+(https://archive.ics.uci.edu/ml/datasets/iris)
 
 ## The dataset
 The actual data was collected by a botanist named Edgar Anderson in 1930. Three different but related species of iris were studied, iris setosa, iris virginica and iris versicolor. Anderson measured four attributes of each species; the width and length of the petals and the width and length of the sepal (the green outer layer of buds that remains below the petals on the stem after flowering). Anderson's data was used by the statistican R. A Fisher to test classification models. A more recent use case has been the application to machine learning. 
@@ -34,3 +35,6 @@ The variety names are stored in a separate attribute called target_names, which 
 (https://scikit-learn.org/stable/modules/generated/sklearn.datasets.load_iris.html)
 
 ## Code
+The main summary statistics for each variable are outputted to the file [summary.txt](summary.txt). The first code to set this file up runs on line 12. The variety names are output first, along with their corresponding code. The names are pulled from the target_names list using their index. The argument "w" is passed to the open function so that this code can write to the summary file. "w" also means it will overwrite the contents of the file each time the code is run, rather than appending to it.
+
+The remainder of the code that writes to the summary file begins on line 23. This code takes the dataframe and aggregates the four attributes, grouping them by the variety (target). The min, max, median, mean and standard deviation of each attribute are displayed in the summary file. In this block of code the argument "a" is passed to the open function so this data is appended to the output from line 12, rather than overwriting it.
