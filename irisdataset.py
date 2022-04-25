@@ -4,9 +4,6 @@
 from sklearn.datasets import load_iris          #loads the modules necessary for this code
 from matplotlib import pyplot as plt
 import pandas as pd
-import numpy as np
-import scipy.stats
-import sys
 
 data = load_iris(return_X_y = False, as_frame = True)                 #loads the iris dataset as a dataframe
 
@@ -124,7 +121,7 @@ print("\n",irisData.groupby('target').agg(   #finds the standard deviation of th
 )
 )
 
-virginicascore = []
+virginicascore = []         
 versicolorscore = []
 
 print("\nAlgorithm to classify a particular sample of iris:\n")
