@@ -84,26 +84,32 @@ plt.show()
 
 plt.scatter(petLen, petWid, c = data.target)            #creates a scatterplot for each pair of characteristics, colouring them by variety to differentiate each point
 plt.title("Plot of petal length vs petal width")
+plt.savefig("Plot of petal length vs petal width.png")
 plt.show()
 
 plt.scatter(sepLen, sepWid, c = data.target)
 plt.title("Plot of sepal length vs sepal width")
+plt.savefig("Plot of sepal length vs sepal width.png")
 plt.show()
 
 plt.scatter(petLen, sepWid, c = data.target)
 plt.title("Plot of petal length vs sepal width")
+plt.savefig("Plot of petal length vs sepal width.png")
 plt.show()
 
 plt.scatter(sepLen, petWid, c = data.target)
-plt.title("Plot of petal length vs petal width")
+plt.title("Plot of sepal length vs petal width")
+plt.savefig("Plot of sepal length vs petal width.png")
 plt.show()
 
 plt.scatter(petLen, sepLen, c = data.target)
-plt.title("Plot of petal length vs petal width")
+plt.title("Plot of petal length vs sepal length")
+plt.savefig("Plot of petal length vs sepal length.png")
 plt.show()
 
 plt.scatter(sepWid, petWid, c = data.target)
-plt.title("Plot of petal length vs petal width")
+plt.title("Plot of sepal width vs petal width")
+plt.savefig("Plot of sepal width vs petal width.png")
 plt.show()
 
 print("\n",irisData.groupby('target').agg(   #finds the standard deviation of the four attributes for each variety of iris
