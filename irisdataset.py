@@ -121,7 +121,7 @@ print("\n",irisData.groupby('target').agg(   #finds the standard deviation of th
 )
 )
 
-virginicascore = []         
+virginicascore = []         #creates two empty lists to hold integers from classification model in next block of text
 versicolorscore = []
 
 print("\nAlgorithm to classify a particular sample of iris:\n")
