@@ -126,6 +126,9 @@ print("\n",irisData.groupby('target').agg(   #finds the standard deviation of th
 
 intervals = [range(0, 50), range(50, 100), range(100,150)]          #creates slices equivalent to the locations of the three varieties of iris
 
+virginicascore = []
+versicolorscore = []
+
 print("\nAlgorithm to classify a particular sample of iris:\n")
       
 sepallength = float(input("Enter sepal length: "))     #accepts iris attribute data from user and stores in a variable
@@ -137,4 +140,44 @@ if petallength >= (irisData['petal length (cm)'][0:50].mean() - (6 * (irisData['
 petallength <= (irisData['petal length (cm)'][0:50].mean() + (6 * (irisData['petal length (cm)'][0:50].std()))) and \
 petalwidth >= (irisData['petal width (cm)'][0:50].mean() - (6 * (irisData['petal width (cm)'][0:50].std()))) and \
 petalwidth <= (irisData['petal width (cm)'][0:50].mean() + (6 * (irisData['petal width (cm)'][0:50].std()))):
-    print("setosa")
+    print("This sample is iris setosa")
+
+else:
+    if petallength >= (irisData['petal length (cm)'][51:100].mean() - (6 * (irisData['petal length (cm)'][51:100].std()))) and \
+    petallength <= (irisData['petal length (cm)'][51:100].mean() + (6 * (irisData['petal length (cm)'][51:100].std()))):
+        versicolorscore.append(1)
+
+    if petalwidth >= (irisData['petal width (cm)'][51:100].mean() - (6 * (irisData['petal width (cm)'][51:100].std()))) and \
+    petalwidth <= (irisData['petal width (cm)'][51:100].mean() + (6 * (irisData['petal width (cm)'][51:100].std()))):
+        versicolorscore.append(1)
+
+    if sepallength >= (irisData['sepal length (cm)'][51:100].mean() - (6 * (irisData['sepal length (cm)'][51:100].std()))) and \
+    sepallength <= (irisData['sepal length (cm)'][51:100].mean() + (6 * (irisData['sepal length (cm)'][51:100].std()))):
+        versicolorscore.append(1)
+
+    if sepalwidth >= (irisData['sepal width (cm)'][51:100].mean() - (6 * (irisData['sepal width (cm)'][51:100].std()))) and \
+    sepalwidth <= (irisData['sepal width (cm)'][51:100].mean() + (6 * (irisData['sepal width (cm)'][51:100].std()))):
+        versicolorscore.append(1)
+
+    if petallength >= (irisData['petal length (cm)'][101:150].mean() - (6 * (irisData['petal length (cm)'][101:150].std()))) and \
+    petallength <= (irisData['petal length (cm)'][101:150].mean() + (6 * (irisData['petal length (cm)'][101:150].std()))):
+        virginicascore.append(1)
+
+    if petalwidth >= (irisData['petal width (cm)'][101:150].mean() - (6 * (irisData['petal width (cm)'][101:150].std()))) and \
+    petalwidth <= (irisData['petal width (cm)'][101:150].mean() + (6 * (irisData['petal width (cm)'][101:150].std()))):
+        virginicascore.append(1)
+
+    if sepallength >= (irisData['sepal length (cm)'][101:150].mean() - (6 * (irisData['sepal length (cm)'][101:150].std()))) and \
+    sepallength <= (irisData['sepal length (cm)'][101:150].mean() + (6 * (irisData['sepal length (cm)'][101:150].std()))):
+        virginicascore.append(1)
+
+    if sepalwidth >= (irisData['sepal width (cm)'][101:150].mean() - (6 * (irisData['sepal width (cm)'][101:150].std()))) and \
+    sepalwidth <= (irisData['sepal width (cm)'][101:150].mean() + (6 * (irisData['sepal width (cm)'][101:150].std()))):
+        versicolorscore.append(1)
+
+    if sum(versicolorscore) > sum(virginicascore):
+        print("\nThis sample is iris versicolor")
+    elif sum(versicolorscore) < sum(virginicascore):
+        print("\nThis sample is iris virginica")
+    elif sum(versicolorscore) == sum(virginicascore):
+        print("This sample is either iris versicolor or iris virginica but it cannot be differentiated any further using this model")
