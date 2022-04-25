@@ -135,14 +135,14 @@ sepallength = float(input("Enter sepal length: "))     #accepts iris attribute d
 sepalwidth = float(input("Enter sepal width: "))
 petallength = float(input("Enter petal length: "))
 petalwidth = float(input("Enter petal width: "))
-
+                                                        #this block checks the setosa petal dimensions first as they are the easiest way to differentiate the varieties initially
 if petallength >= (irisData['petal length (cm)'][0:50].mean() - (6 * (irisData['petal length (cm)'][0:50].std()))) and \
 petallength <= (irisData['petal length (cm)'][0:50].mean() + (6 * (irisData['petal length (cm)'][0:50].std()))) and \
 petalwidth >= (irisData['petal width (cm)'][0:50].mean() - (6 * (irisData['petal width (cm)'][0:50].std()))) and \
 petalwidth <= (irisData['petal width (cm)'][0:50].mean() + (6 * (irisData['petal width (cm)'][0:50].std()))):
     print("This sample is iris setosa")
 
-else:
+else:                                           #if the setosa petal dimensions do not identify the variety as a setosa immediately, we then consider the other two varieties. We use six sigma intervals to determine the probability of the users sample being a particular variety
     if petallength >= (irisData['petal length (cm)'][51:100].mean() - (6 * (irisData['petal length (cm)'][51:100].std()))) and \
     petallength <= (irisData['petal length (cm)'][51:100].mean() + (6 * (irisData['petal length (cm)'][51:100].std()))):
         versicolorscore.append(1)
@@ -175,7 +175,7 @@ else:
     sepalwidth <= (irisData['sepal width (cm)'][101:150].mean() + (6 * (irisData['sepal width (cm)'][101:150].std()))):
         versicolorscore.append(1)
 
-    if sum(versicolorscore) > sum(virginicascore):
+    if sum(versicolorscore) > sum(virginicascore):      #this block checks the sum of the score lists to see which is bigger and therefore more likely to be the variety of the user's sample
         print("\nThis sample is iris versicolor")
     elif sum(versicolorscore) < sum(virginicascore):
         print("\nThis sample is iris virginica")
