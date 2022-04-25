@@ -43,4 +43,8 @@ On line 15 and 17, the structure of the data is looked at. Using the head functi
 
 Line 20 uses the describe function to list all the availabe summary statistics for the dataset as whole. While interesting, they don't contribute much to help classify the varieties which will be the main focus of this project. For the remainder of this study, the data will be looked at on a variety scale. From our initial investigations we can establish a slicing pattern of lines 0 to 49 for setosa, 50 to 99 for versicolor and 100 to 149 for virginica. We will use these patterns, written as slicing statements, to build a model to help classify the varieties.
 
-Two methods of visualising the data will help with establishing the structure of the model, boxplots and scatterplots. 
+Two methods of visualising the data will help with establishing the structure of the model, boxplots and scatterplots. The boxplots plot the range of each variety for each attribute on a single plot, allowing an easy comparision between varieties. Examining the resulting plots, particularly the petal length and petal width plots, make it clear the that the setosa variety dimensions are disjoint from those of the other two. There is clear separation between the setosa cluster and the larger versicolor/virginica cluster. It follows that an analysis of the petal lengths and widths should immediately identify if a sample is a setosa or not.
+
+The scatterplots plot pairs of attributes against each other. The resulting data points are coloured by variety to visualise the interaction between them. Again we see that setosa data points are generally distinct from any other points but there is a degree of mixing between virginica and versicolor. This implies that it will not be possible to to make a simple distinction between those varieties based on one or two dimensions.
+
+### References
