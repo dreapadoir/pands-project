@@ -2,7 +2,8 @@ Target codes:
 0 = setosa 
 1 = versicolor 
 2 = virginica
-       sepal length (cm)                              sepal width (cm)              ... petal length (cm)                  petal width (cm)                             
+
+        sepal length (cm)                              sepal width (cm)              ... petal length (cm)                  petal width (cm)                             
                      min  max   mean median       std              min  max   mean  ...              mean median       std              min  max   mean median       std
 target                                                                              ...                                                                                 
 0                    4.3  5.8  5.006    5.0  0.352490              2.3  4.4  3.428  ...             1.462   1.50  0.173664              0.1  0.6  0.246    0.2  0.105386

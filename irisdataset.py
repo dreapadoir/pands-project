@@ -14,14 +14,14 @@ irisData = data.frame                           #creates a variable containing t
 
 print("Target codes:\n0 =", data.target_names[0], "\n1 =", data.target_names[1], "\n2 =", data.target_names[2], file=open("summary.txt", "w")) #prints out the variety names equivalent to the target codes 
 
-print(irisData.head())                          #shows the first 5 lines of the dataframe to illustrate the structure
+print("\n",irisData.head())                          #shows the first 5 lines of the dataframe to illustrate the structure
 
-print("There are {} samples in the dataset".format(irisData['target'].count()))     #counts the samples in the dataset by counting each entry in the target column
+print("\nThere are {} samples in the dataset".format(irisData['target'].count()))     #counts the samples in the dataset by counting each entry in the target column
 
-print(irisData.describe())                      #describes the dataset as a whole. It gives summary statistics for each attribute without considering the separate varieties.
+print("\n",irisData.describe())                      #describes the dataset as a whole. It gives summary statistics for each attribute without considering the separate varieties.
 
 
-print(irisData.groupby('target').agg(           #groups the data by variety (target) and aggregates the summary statistics listed
+print("\n",irisData.groupby('target').agg(           #groups the data by variety (target) and aggregates the summary statistics listed
     {
         'sepal length (cm)': ["min", "max", "mean", "median", "std" ],
         'sepal width (cm)': ["min", "max", "mean", "median", "std"],
@@ -105,7 +105,7 @@ plt.scatter(sepWid, petWid, c = data.target)
 plt.title("Plot of petal length vs petal width")
 plt.show()
 
-print(irisData.groupby('target').agg(   #finds the standard deviation of the four attributes for each variety of iris
+print("\n",irisData.groupby('target').agg(   #finds the standard deviation of the four attributes for each variety of iris
     {
         'sepal length (cm)': ["std"],
         'sepal width (cm)': ["std"],
@@ -117,7 +117,9 @@ print(irisData.groupby('target').agg(   #finds the standard deviation of the fou
 
 
 intervals = [range(0, 50), range(50, 100), range(100,150)]          #creates slices equivalent to the locations of the three varieties of iris
-        
+
+print("\nAlgorithm to classify a particular sample of iris:\n")
+      
 sepallength = float(input("Enter sepal length: "))     #accepts iris attribute data from user and stores in a variable
 sepalwidth = float(input("Enter sepal width: "))
 petallength = float(input("Enter petal length: "))
