@@ -47,13 +47,13 @@ Two methods of visualising the data will help with establishing the structure of
 
 The scatterplots plot pairs of attributes against each other. The resulting data points are coloured by variety to visualise the interaction between them. Again we see that setosa data points are generally distinct from any other points but there is a degree of mixing between virginica and versicolor. This implies that it will not be possible to to make a simple distinction between those varieties based on one or two dimensions.
 
-The model to classify an instance of iris from user submitted data is started on line 113.
+The model to classify an instance of iris from user submitted data is started on line 113. Two empty lists to contain scores for versicolor and virginica are initiated. Data is then requested from the user through input statements and assigned to four variables representing the dimensions of the sample.
 
 To differentiate between varieties, a 6 sigma confidence interval can be used. In this case sigma refers to the standard deviation of a population. Statistically, 99.99966% of all values of a population are expected to fall within 6 standard deviations of the mean.
 
-The first part of the model looks at the petal widths and length are examined. If
+The first part of the model looks at the petal widths and length are examined. If the petal width and length fall within the setosa 6 sigma confidence intervals, we can be confident that the sample is a setosa. Setosa petal length and widths are disjoint from other varieties as illustrated in the preceding plots. This logic is implemented using an if statement.
 
-For the purposes of this model, each data point entered by the user will be compared to the 6 six sigma confidence intervals for that attribute of both versicolor and virginica. If the datapoint is within the interval, a 1 is added to the empty list
+For the purposes of this model, each data point entered by the user will then be compared to the 6 six sigma confidence intervals for that attribute of both versicolor and virginica. If the datapoint is within the interval, a 1 is added to the corresponding lists initialised on line 124 and 125. On completion of the comparisons, the sum of each list is generated and compared. The list with the highest score is then the most likely variety of the sample. Again this is implemented using if statements and also accounts for the situtation where the sum of each list is the same. A statement is printed notifying the user that the varieties cannot be differentiated any further.
 
 ### References
 (https://sixsigmastudyguide.com/confidence-intervals/)
