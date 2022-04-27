@@ -47,4 +47,14 @@ Two methods of visualising the data will help with establishing the structure of
 
 The scatterplots plot pairs of attributes against each other. The resulting data points are coloured by variety to visualise the interaction between them. Again we see that setosa data points are generally distinct from any other points but there is a degree of mixing between virginica and versicolor. This implies that it will not be possible to to make a simple distinction between those varieties based on one or two dimensions.
 
+The model to classify an instance of iris from user submitted data is started on line 113.
+
+To differentiate between varieties, a 6 sigma confidence interval can be used. In this case sigma refers to the standard deviation of a population. Statistically, 99.99966% of all values of a population are expected to fall within 6 standard deviations of the mean.
+
+The first part of the model looks at the petal widths and length are examined. If
+
+For the purposes of this model, each data point entered by the user will be compared to the 6 six sigma confidence intervals for that attribute of both versicolor and virginica. If the datapoint is within the interval, a 1 is added to the empty list
+
 ### References
+(https://sixsigmastudyguide.com/confidence-intervals/)
+(https://en.wikipedia.org/wiki/Six_Sigma)
