@@ -55,6 +55,8 @@ The first part of the model looks at the petal widths and length are examined. I
 
 For the purposes of this model, each data point entered by the user will then be compared to the 6 six sigma confidence intervals for that attribute of both versicolor and virginica. If the datapoint is within the interval, a 1 is added to the corresponding lists initialised on line 124 and 125. On completion of the comparisons, the sum of each list is generated and compared. The list with the highest score is then the most likely variety of the sample. Again this is implemented using if statements and also accounts for the situtation where the sum of each list is the same. A statement is printed notifying the user that the varieties cannot be differentiated any further.
 
+The model is managed using a function called inputdata. A while loop is then used to manage any errors while inputting the data. If the user inputs a data type other than int or float, the program throws an error. The try except statement catches the error and prints a statement telling the user to try again using numbers only.
+
 ### References
 (https://sixsigmastudyguide.com/confidence-intervals/)
 (https://en.wikipedia.org/wiki/Six_Sigma)
