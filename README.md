@@ -60,3 +60,4 @@ The model is managed using a function called inputdata. A while loop is then use
 ### References
 (https://sixsigmastudyguide.com/confidence-intervals/)
 (https://en.wikipedia.org/wiki/Six_Sigma)
+(https://stackoverflow.com/questions/48439995/while-try-except-in-python-3)
